@@ -5,15 +5,14 @@ import { useRef } from "react"
 import Image from "next/image"
 
 const experiences = [
-  { period: "2023 - Present", role: "Senior Product Designer", company: "Pixel Studio" },
-  { period: "2021 - 2023", role: "UI/UX Designer", company: "DesignCraft Agency" },
-  { period: "2019 - 2021", role: "Junior Designer", company: "StartupHub" },
-  { period: "2018 - 2019", role: "Graphic Design Intern", company: "CreativeWorks" },
+  { period: "2022 - Present", role: "Graphic Designer", company: "Freelancer" },
+  { period: "2024 - 2025", role: "UI/UX Designer/ Graphic Designer/ Video Editor", company: "Dockyard Total Solution" },
+ 
 ]
 
 const tools = [
-  "Figma", "Adobe Creative Suite", "Framer", "Webflow",
-  "Blender", "After Effects", "Sketch", "Principle",
+  "Figma", "Canva", "Photoshop", "Premier Pro", "After Effects", "Davinci Resolve", "Capcut",
+  "Wondershare Filmora", "Framer",
 ]
 
 export function About() {
@@ -56,7 +55,7 @@ export function About() {
           >
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border bg-card">
               <Image
-                src="/profile.jpg"
+                src="/profile.png"
                 alt="Profile photo"
                 fill
                 className="object-cover"
@@ -87,18 +86,15 @@ export function About() {
           >
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
               <p>
-                I am a multidisciplinary designer with over 6 years of experience creating
+                I am a multidisciplinary designer with over 3 years of experience creating
                 digital products and visual identities that connect brands with their audiences.
               </p>
               <p>
                 My approach blends user-centered design principles with a strong visual
-                aesthetic sensibility. I believe the best design is invisible -- it simply works,
+                aesthetic sensibility. I believe the best design is invisible - it simply works,
                 feels natural, and brings joy to the people who interact with it.
               </p>
-              <p>
-                When I am not designing, you will find me exploring art exhibitions,
-                experimenting with generative art, or hiking through national parks.
-              </p>
+      
             </div>
 
             {/* Tools */}

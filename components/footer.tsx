@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import Image from "next/image" // 1. Add this import
 
 export function Footer() {
   const ref = useRef<HTMLElement>(null)
@@ -17,9 +18,17 @@ export function Footer() {
           className="flex flex-col items-center justify-between gap-6 sm:flex-row"
         >
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
-              <span className="text-sm font-bold text-primary-foreground">A</span>
+            
+            {/* 2. Replace the 'A' box with your Image */}
+            <div className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-md">
+              <Image 
+                src="/logo.png" 
+                alt="Lahiru Jayasinghe Logo"
+                fill
+                className="object-cover"
+              />
             </div>
+
             <span className="text-sm text-muted-foreground">
               {"Lahiru Jayasinghe"} {" \u00A9 "} {new Date().getFullYear()}
             </span>
