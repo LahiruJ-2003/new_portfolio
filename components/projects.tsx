@@ -7,101 +7,38 @@ import Image from "next/image"
 const allProjects = [
 
   {
-    title: "Horizon Banking",
+    title: "Richmond Collage Cricket",
     category: "UI/UX Design",
-    description: "A modern fintech experience for personal banking with card management and spending analytics.",
-    tags: ["Mobile App", "Fintech", "Design System"],
-    image: "/projects/project-1.jpg",
-    year: "2025",
-  },
-  {
-    title: "Maison Noir",
-    category: "Web Design",
-    description: "Luxury e-commerce redesign for a high-end fashion brand with immersive product experiences.",
-    tags: ["E-commerce", "Fashion", "Responsive"],
-    image: "/projects/project-2.jpg",
-    year: "2025",
-  },
-  {
-    title: "Solara Studio",
-    category: "Brand Identity",
-    description: "Complete visual identity system including logo, typography, color palette, and print collateral.",
-    tags: ["Branding", "Print", "Identity"],
-    image: "/projects/project-3.jpg",
+    description: "Designed a responsive web interface for Richmond College using Figma, focusing on intuitive navigation and modern visual identity.",
+    tags: ["Web App", "Figma", "UI/UX", "Responsive"],
+    image: "/projects/project-1.png",
     year: "2024",
   },
   {
-    title: "Mindful App",
+    title: "Bus Booking Mobile App",
     category: "UI/UX Design",
-    description: "Health and wellness app with meditation tracking, habit building, and calming visual design.",
-    tags: ["Health", "Mobile", "Wellness"],
+    description: "Designed a seamless UI/UX for the BookaBus app using Figma, focusing on creating an intuitive and reliable booking experience for commuters and travelers.",
+    tags: ["Mobile App", "Figma", "UI/UX"],
+    image: "/projects/project-2.jpg",
+    year: "2022",
+  },
+  {
+    title: "DEBONAIR",
+    category: "UI/UX Design",
+    description: "Designed a sleek, responsive interface for Debonair using Figma. I focused on translating the venue's premium, art-filled ambiance into a seamless digital booking experience.",
+    tags: ["Web App", "Figma", "UI/UX", "Responsive"],
+    image: "/projects/project-3.png",
+    year: "2020",
+  },
+  {
+    title: "Facebook Posts",
+    category: "Graphic Design",
+    description: "Designed a series of engaging Facebook posts focused on brand storytelling and audience growth.",
+    tags: ["Social Media Posts", "Figma", "Photoshop"],
     image: "/projects/project-4.jpg",
     year: "2024",
   },
-  {
-    title: "Resonance Festival",
-    category: "Graphic Design",
-    description: "Bold typographic poster series for an annual music festival with experimental visual language.",
-    tags: ["Poster", "Typography", "Festival"],
-    image: "/projects/project-5.jpg",
-    year: "2024",
-  },
-  {
-    title: "DataPulse Dashboard",
-    category: "UI/UX Design",
-    description: "Analytics dashboard for SaaS product featuring data visualization and dark mode interface.",
-    tags: ["Dashboard", "SaaS", "Data Viz"],
-    image: "/projects/project-6.jpg",
-    year: "2023",
-  },
-  {
-    title: "Aurora App",
-    category: "UI/UX Design",
-    description: "Minimalist note-taking app with AI-powered organization and cloud synchronization.",
-    tags: ["Productivity", "Mobile", "AI"],
-    image: "/projects/project-1.jpg",
-    year: "2023",
-  },
-  {
-    title: "Nexus Brand",
-    category: "Brand Identity",
-    description: "Complete branding package for a tech startup including logo, guidelines, and digital assets.",
-    tags: ["Branding", "Tech", "Digital"],
-    image: "/projects/project-2.jpg",
-    year: "2023",
-  },
-  {
-    title: "Apex Studio",
-    category: "Web Design",
-    description: "Portfolio website redesign for a creative agency with interactive galleries and animations.",
-    tags: ["Web", "Animation", "Portfolio"],
-    image: "/projects/project-3.jpg",
-    year: "2022",
-  },
-  {
-    title: "Stellar App",
-    category: "UI/UX Design",
-    description: "Social platform redesign focused on user engagement and community building features.",
-    tags: ["Social", "Community", "Mobile"],
-    image: "/projects/project-4.jpg",
-    year: "2022",
-  },
-  {
-    title: "Harmony Campaign",
-    category: "Graphic Design",
-    description: "Multi-media campaign design for a wellness brand including social, print, and digital assets.",
-    tags: ["Campaign", "Wellness", "Multi-media"],
-    image: "/projects/project-5.jpg",
-    year: "2022",
-  },
-  {
-    title: "Vertex Analytics",
-    category: "UI/UX Design",
-    description: "Business intelligence dashboard with real-time data visualization and reporting tools.",
-    tags: ["Analytics", "Dashboard", "B2B"],
-    image: "/projects/project-6.jpg",
-    year: "2022",
-  },
+  
 ]
 
 function ProjectCard({
@@ -206,10 +143,11 @@ function ProjectCard({
 }
 
 export function Projects() {
-  const [visibleCount, setVisibleCount] = useState(6)
   const headingRef = useRef<HTMLDivElement>(null)
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" })
-  const displayedProjects = allProjects.slice(0, visibleCount)
+  
+  // Hardcode this to 6 so your grid stays clean and balanced
+  const displayedProjects = allProjects.slice(0, 6)
 
   return (
     <section id="work" className="relative px-4 py-16 sm:px-6 sm:py-24 lg:px-12 lg:py-32">
@@ -254,24 +192,24 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Load more button */}
-        {visibleCount < allProjects.length && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-12 flex justify-center sm:mt-16"
+        {/* Behance Link Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12 flex justify-center sm:mt-16"
+        >
+          <motion.a
+            href="https://www.behance.net/Lahiru_Jayasinghe"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="rounded-full border border-border px-8 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:border-primary sm:px-10 sm:py-4 sm:text-base"
           >
-            <motion.button
-              onClick={() => setVisibleCount(visibleCount + 3)}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="rounded-full border border-border px-8 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:border-primary sm:px-10 sm:py-4 sm:text-base"
-            >
-              Load More Projects
-            </motion.button>
-          </motion.div>
-        )}
+            View More
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   )
