@@ -10,6 +10,9 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 export const metadata: Metadata = {
   title: 'Lahiru Jayasinghe | Designer',
   description: 'UI/UX Designer & Graphic Designer crafting meaningful digital experiences',
+  icons: {
+    icon: '/logo2.png',
+  },
 }
 
 export default function RootLayout({
